@@ -3,6 +3,9 @@ from redis import Redis
 from rq import Queue
 from sendgrid import SendGridAPIClient
 
+from dotenv import load_dotenv
+load_dotenv()  # take environment variables from .env.
+
 from build_email import send_message
 
 sendgrid_client = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
